@@ -25,13 +25,19 @@ package org.cocos2dx.FacebookDemo;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
-
+import android.content.Intent;
 import android.os.Bundle;
 
+
+
 public class FacebookDemo extends Cocos2dxActivity{
+
+    protected FacebookConnectPlugin facebookVan = null;
 	
     protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);	
+        facebookVan = new FacebookConnectPlugin(this);
+        facebookVan.onCreate(savedInstanceState);
 	}
 
     public Cocos2dxGLSurfaceView onCreateView() {
@@ -44,5 +50,32 @@ public class FacebookDemo extends Cocos2dxActivity{
 
     static {
         System.loadLibrary("cocos2dcpp");
+    }
+    @Override
+    protected void onStart() {
+        // TODO Auto-generated method stub
+        super.onStart();
+        facebookVan.onStart();
+    }
+    
+    @Override
+    protected void onStop() {
+        // TODO Auto-generated method stub
+        super.onStop();
+        facebookVan.onStop();
+    }
+    
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // TODO Auto-generated method stub
+        super.onSaveInstanceState(outState);
+        facebookVan.onSaveInstanceState(outState);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        facebookVan.onActivityResult(requestCode, resultCode, data);
     }     
 }
