@@ -1,6 +1,12 @@
 #include "HelloWorldScene.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "FacebookInterface.h"
+#endif
+
 USING_NS_CC;
+
+using namespace std;
 
 CCScene* HelloWorld::scene()
 {
@@ -73,8 +79,24 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
     
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    
+    
+#endif
+    
+    
     return true;
 }
+
+void HelloWorld::CallFunctionName(int cbIndex,string tstr)
+{
+    CCLOG("%s",tstr.c_str());
+}
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
+#endif
 
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)

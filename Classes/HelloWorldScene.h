@@ -15,6 +15,9 @@ public:
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
     
+    
+    static void CallFunctionName(int cbIndex,std::string tstr);
+    
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 };

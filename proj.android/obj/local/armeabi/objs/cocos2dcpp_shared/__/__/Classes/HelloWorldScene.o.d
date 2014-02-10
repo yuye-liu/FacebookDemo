@@ -203,7 +203,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/HelloWorldScene.o: \
  /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/CCScheduler.h \
  /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/data_support/uthash.h \
  /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/component/CCComponent.h \
- /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h
+ /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h \
+ jni/../../Classes/FacebookInterface.h
 
 jni/../../Classes/HelloWorldScene.h:
 
@@ -612,3 +613,5 @@ jni/../../Classes/HelloWorldScene.h:
 /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/component/CCComponent.h:
 
 /Users/liuyuye/Desktop/FacebookDemo/projects/FacebookDemo/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h:
+
+jni/../../Classes/FacebookInterface.h:

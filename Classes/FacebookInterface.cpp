@@ -1,9 +1,10 @@
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-
+#include "HelloWorldScene.h"
 #include "FacebookInterface.h"
 #include "platform/android/jni/JniHelper.h"
 #include <jni.h>
 #include <android/log.h>
+
 /*
 #include "ScriptingCore.h"
 
@@ -15,32 +16,39 @@ JSObject *fbObject = NULL;
 extern "C"{
 	void Java_org_cocos2dx_facebookjsb_FacebookConnectPlugin_nativeCallback(JNIEnv*  env, jobject thiz, jint cbIndex,jstring params)
 	{
-		/*
-		ScriptingCore* sc = ScriptingCore::getInstance();
-		JSContext *cx = sc->getGlobalContext();
 		
+		//ScriptingCore* sc = ScriptingCore::getInstance();
+		//JSContext *cx = sc->getGlobalContext();
+		/*
 		if (fbObject == NULL)
 			fbObject = JSVAL_TO_OBJECT(anonEvaluate(cx, sc->getGlobalObject(), "(function () { return FB; })()"));
 		
 		jsval res;
-		
+		*/
 		if (params != NULL)
 		{
-			jsval argv[2];
-			argv[0] = INT_TO_JSVAL(cbIndex);
-			std::string tstr = JniHelper::jstring2string(params);
-			argv[1] = std_string_to_jsval(cx,tstr);
+			//jsval argv[2];
+			//argv[0] = INT_TO_JSVAL(cbIndex);
+			
+			//std::string tstr = JniHelper::jstring2string(params);
+			//argv[1] = std_string_to_jsval(cx,tstr);
 
-			JS_CallFunctionName(cx, fbObject, "callback", 2, argv, &res);
+			//JS_CallFunctionName(cx, fbObject, "callback", 2, argv, &res);
+
+			const char* str;
+        	str = env->GetStringUTFChars(params, 0);
+        	std::string tstr(str);
+			HelloWorld::CallFunctionName(cbIndex,tstr);
 		}
 		else
 		{
-			jsval argv[1];
-			argv[0] = INT_TO_JSVAL(cbIndex);
+			//jsval argv[1];
+			//argv[0] = INT_TO_JSVAL(cbIndex);
 
-			JS_CallFunctionName(cx, fbObject, "callback", 1, argv, &res);
+			//JS_CallFunctionName(cx, fbObject, "callback", 1, argv, &res);
+			std::string tstr = "";
+			HelloWorld::CallFunctionName(cbIndex,tstr);
 		}
-		*/
 	}
 };
 
