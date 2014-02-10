@@ -85,7 +85,6 @@ bool HelloWorld::init()
     
 #endif
     
-    
     return true;
 }
 

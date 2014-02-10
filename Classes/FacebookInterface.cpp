@@ -13,6 +13,8 @@ const char* FBJavaClassName = "org/cocos2dx/facebookjsb/FacebookConnectPlugin";
 extern jsval anonEvaluate(JSContext *cx, JSObject *thisObj, const char* string);
 JSObject *fbObject = NULL;
 */
+
+const char* FBJavaClassName = "org/cocos2dx/facebookjsb/FacebookConnectPlugin";
 extern "C"{
 	void Java_org_cocos2dx_facebookjsb_FacebookConnectPlugin_nativeCallback(JNIEnv*  env, jobject thiz, jint cbIndex,jstring params)
 	{
@@ -57,9 +59,9 @@ void FacebookInterface::callbackJs(int cbIndex, const char* params){
 }
 
 void FacebookInterface::login(int cbIndex,const char* scope){
-	/*
-	JniMethodInfo t;
-	if (JniHelper::getStaticMethodInfo(t
+	
+	cocos2d::JniMethodInfo t;
+	if (cocos2d::JniHelper::getStaticMethodInfo(t
 		, FBJavaClassName
 		, "login"
 		, "(ILjava/lang/String;)V"))
@@ -76,7 +78,6 @@ void FacebookInterface::login(int cbIndex,const char* scope){
 		}	
 		t.env->DeleteLocalRef(t.classID);
 	}  
-	*/	
 }
 
 void FacebookInterface::logout(int cbIndex){
