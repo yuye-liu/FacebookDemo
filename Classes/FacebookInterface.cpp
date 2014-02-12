@@ -14,9 +14,9 @@ extern jsval anonEvaluate(JSContext *cx, JSObject *thisObj, const char* string);
 JSObject *fbObject = NULL;
 */
 
-const char* FBJavaClassName = "org/cocos2dx/facebookjsb/FacebookConnectPlugin";
+const char* FBJavaClassName = "org/cocos2dx/FacebookDemo/FacebookConnectPlugin";
 extern "C"{
-	void Java_org_cocos2dx_facebookjsb_FacebookConnectPlugin_nativeCallback(JNIEnv*  env, jobject thiz, jint cbIndex,jstring params)
+	void Java_org_cocos2dx_FacebookDemo_FacebookConnectPlugin_nativeCallback(JNIEnv*  env, jobject thiz, jint cbIndex,jstring params)
 	{
 		
 		//ScriptingCore* sc = ScriptingCore::getInstance();
@@ -95,9 +95,9 @@ void FacebookInterface::logout(int cbIndex){
 }
 
 void FacebookInterface::getLoginStatus(int cbIndex,bool force){
-	/*
-	JniMethodInfo t;
-	if (JniHelper::getStaticMethodInfo(t
+	
+	cocos2d::JniMethodInfo t;
+	if (cocos2d::JniHelper::getStaticMethodInfo(t
 		, FBJavaClassName
 		, "getLoginStatus"
 		, "(IZ)V"))
@@ -105,7 +105,7 @@ void FacebookInterface::getLoginStatus(int cbIndex,bool force){
 		t.env->CallStaticVoidMethod(t.classID, t.methodID, cbIndex,force);
 		t.env->DeleteLocalRef(t.classID);
 	}  	
-	*/
+	
 }
 
 std::string FacebookInterface::api(const char* graphPath,const char* method,const char* params,int cbIndex){
@@ -144,9 +144,9 @@ std::string FacebookInterface::api(const char* graphPath,const char* method,cons
 }
 
 void FacebookInterface::ui(const char* params,int cbIndex){
-	/*
-	JniMethodInfo t;
-	if (JniHelper::getStaticMethodInfo(t
+	
+	cocos2d::JniMethodInfo t;
+	if (cocos2d::JniHelper::getStaticMethodInfo(t
 		, FBJavaClassName
 		, "ui"
 		, "(Ljava/lang/String;I)V"))
@@ -156,7 +156,7 @@ void FacebookInterface::ui(const char* params,int cbIndex){
 		t.env->DeleteLocalRef(jparams);
 		t.env->DeleteLocalRef(t.classID);
 	}  
-	*/
+
 }
 
 #endif
