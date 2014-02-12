@@ -82,7 +82,13 @@ bool HelloWorld::init()
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     
-    
+    //FacebookInterface::getLoginStatus(852456,false);
+
+    //FacebookInterface::ui("{method: 'feed',name: 'Facebook Dialogs',link: 'https://developers.facebook.com/docs/dialogs/',picture: 'http://fbrell.com/f8.jpg',caption: 'Reference Documentation',description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'}",852456);
+    CCLOG("test");
+    FacebookInterface::login(852456,"{scope: 'publish_actions'}");
+
+
 #endif
     
     return true;

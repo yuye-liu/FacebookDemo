@@ -238,6 +238,8 @@ public class FacebookConnectPlugin {
 	}
 
 	public static void ui(String params, int cbIndex) {
+		Log.i("Rye","uiuiuiui===");
+		
 		Session session = Session.getActiveSession();
 		if (session == null) {
 			session = new Session(mContext);
